@@ -1,5 +1,4 @@
-import React, { useEffect } from "react";
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Message from "./Message";
 
 export default function SimpleForm() {
@@ -41,7 +40,7 @@ export default function SimpleForm() {
         onChange={onInputChange}
       />
 
-      {username === "cactus" ? <Message /> : null}
+      {username === "cactus" || email === "cactus@gmail" ? <Message /> : null}
     </>
   );
 }
