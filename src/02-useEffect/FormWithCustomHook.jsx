@@ -1,21 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Message from "./Message";
+import useForm from "../hooks/useForm";
 
 export default function SimpleForm() {
-  const [formState, setFormState] = useState({
-    username: "",
-    email: "",
-  });
-
-  const { username, email } = formState;
-
-  const onInputChange = ({ target }) => {
-    const { name, value } = target;
-    setFormState({
-      ...formState,
-      [name]: value,
-    });
-  };
+  const { onInputChange, onResetForm, username, email, password } = useForm({});
 
   useEffect(() => {
     console.log("formState cambió");
@@ -29,6 +17,7 @@ export default function SimpleForm() {
         type="text"
         className="form-control mb-2"
         placeholder="* Username"
+        value={username}
         name="username"
         onChange={onInputChange}
       />
@@ -37,8 +26,21 @@ export default function SimpleForm() {
         className="form-control mt-2"
         placeholder="* example@gmail.com"
         name="email"
+        value={email}
         onChange={onInputChange}
       />
+      <input
+        type="password"
+        className="form-control mt-2"
+        placeholder="* Password"
+        name="password"
+        value={password}
+        onChange={onInputChange}
+      />
+
+      <button className="btn btn-primary mt-2" onClick={onResetForm}>
+        Borrar
+      </button>
 
       {username === "cactus" || email === "cactus@gmail" ? <Message /> : null}
     </>
