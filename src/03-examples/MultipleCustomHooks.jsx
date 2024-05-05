@@ -3,6 +3,7 @@ import useFetch from "../hooks/useFetch";
 import LoadingMessage from "./LoadingMessage";
 import PokemonCard from "./PokemonCard";
 import useTranslate from "../hooks/useTranslate";
+import "../styles/MultipleCustomHooks.css";
 
 export default function MultipleCustomHooks() {
   const upperLimit = 40;
@@ -25,7 +26,7 @@ export default function MultipleCustomHooks() {
 
   return (
     <>
-      <span className="author">YT</span>
+      <span className="author">Made by Yeison Tobo</span>
       <div className="main-container">
         <h1 className="title">DEMO Pokemon</h1>
 

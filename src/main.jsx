@@ -1,15 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import FormWithCustomHook from "./02-useEffect/FormWithCustomHook";
+import FocusScreen from "./04-useRef/FocusScreen";
+import Memorize from "./06-memos/Memorize";
 import MultipleCustomHooks from "./03-examples/MultipleCustomHooks";
-// import SimpleForm from "./02-useEffect/SimpleForm";
-// import CounterWithCustomHook from "./useState/CounterWithCustomHook";
-// // import HooksApp from "./HooksApp";
-// import CounterApp from "./useState/CounterApp";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   // <React.StrictMode>
-  <MultipleCustomHooks />
+  <>
+    <MultipleCustomHooks />
+  </>
+
   // </React.StrictMode>
 );
